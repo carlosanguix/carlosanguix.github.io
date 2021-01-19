@@ -4,22 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
     <title>Document</title>
 </head>
 <body>
     <div id="main">
-        <div id="background">
-            
-        </div>
-        <div id="coreBox">
-            <div id="ballBox">
-                <div id="ball">
+        
+        <div id="background"></div>
+        <div id="index1">
+            <div id="coreBox">
+                <div id="ballBox">
+                    <div id="ball"></div>
+                </div>
+                <div id="nameBox">
+                    <h1 id="name">Carlos Anguix Genovés</h1>
+                    <p>Full Stack Web Developer</p>
                 </div>
             </div>
+            <div id="lineLinks"></div>
+            <div id="links">
+                <div class="link" id="contactButton"> Contact </div>
+                <div class="link" id="aboutButton"> About </div>
+                <div class="link" id="resumeButton"> Resume </div>
+            </div>
+        </div>
+    </div>
 
-                <div id="name">
-
-                </div>
+    <div id="contactBox" class="contactBoxIn">
+        <div class="close"></div>
+        <p>Contact</p>
+        <div id="lineContact"></div>
+        <div id="contacts">
+            <div class="social" id="linkedin"><img src="resources/img/logoLinkedin.png" alt="" srcset=""></div>
+            <div class="social" id="mail"><img src="resources/img/logoMail.png" alt="" srcset=""></div>
+            <div class="social" id="github"><img src="resources/img/logoGithub.png" alt="" srcset=""></div>
         </div>
     </div>
 </body>
