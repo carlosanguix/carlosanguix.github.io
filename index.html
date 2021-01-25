@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="index.js" defer></script>
     <title>Carlos Anguix Genovés</title>
 </head>
 <body>
-
     <div id="main">
-        <div id="background"></div>
         <div id="index">
             <div id="nameBox">
                     <h1 id="name">Hi, I'm Carlos</h1>
@@ -18,16 +17,28 @@
             </div>
             <div id="lineLinks"></div>
             <div id="links">
-                <div class="link" id="contactButton"> Contact </div>
-                <div class="link" id="aboutButton"> About </div>
-                <div class="link" id="resumeButton"> Resume </div>
+                <a class="link" href="#aboutDiv"><div id="aboutButton"> About </div></a>
+                <a class="link" href="#projectsDiv"><div id="projectsButton"> Projects </div></a>
+                <a class="link" href="#contactDiv"><div id="contactButton"> Contact </div></a>
             </div>
         </div>
     </div>
 
-    <div id="aboutit">
-
+    <div id="aboutDiv">
+        <h1> About</h1>
     </div>
-    
+
+    <div id="projectsDiv">
+        <h1>Projects</h1>
+        <div id="wrapProjects">
+            <div class="project"></div>
+            <div class="project"></div>
+            <div class="project"></div>
+            <div class="project"></div>
+        </div>
+    </div>
+
+    <div id="contactDiv">
+    </div>
 </body>
 </html>
