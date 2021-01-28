@@ -76,6 +76,14 @@ body {
     animation-delay: 1.25s;
 }
 
+.revealBottom {
+    animation: revealBottom 1s cubic-bezier(0, 1, 0.5, 1) normal forwards;
+}
+
+.revealBottomRotate44 {
+    animation: revalBottomRotate 1.5 cubic-bezier(0, 1, 0.5, 1) normal forwards;
+}
+
 .box {
     text-align: center;
     display: flex;
@@ -186,7 +194,7 @@ body {
     min-width: 500px;
     height: 40px;
     position: relative;
-    top: -4px;
+    top: -8px;
 }
 
 .link {
@@ -266,39 +274,61 @@ body {
     flex-wrap: wrap;
     justify-self: center;
     justify-content: space-evenly;
-    width: 80%;
+    width: 60%;
     margin-top: 100px;
 }
 
-.interest {
-    width: 150px;
-    height: 90px;
-    background: red;
-    position: relative;
-  }
-  .interest::before {
-    content: "";
-    position: absolute;
-    top: -50px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 75px solid transparent;
-    border-right: 75px solid transparent;
-    border-bottom: 50px solid red;
-  }
-  .interest::after {
-    content: "";
-    position: absolute;
-    bottom: -50px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 75px solid transparent;
-    border-right: 75px solid transparent;
-    border-top: 50px solid red;
-  }
+.boxInterest {
+    min-width: 140px;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+}
 
+.boxInterest > span {
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+}
+
+.boxInterest > p {
+    font-size: 15px;
+    color: rgb(100, 100, 100);
+}
+
+.interest {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 130px;
+    margin-bottom: 10px;
+    background: rgb(245,253,255);
+    background: radial-gradient(circle, rgba(245,253,255,1) 0%, rgba(0,0,111,1) 66%, rgba(0,0,0,1) 100%);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.interestIn {
+    width: 110px;
+    height: 110px;
+    background-color: white;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.interestIn:first-child > span {
+    font-size: 20px;
+    letter-spacing: normal;
+    position: relative;
+    top: -4px;
+}
+
+.interest:nth-child(1) > div > img {
+    height: 60%;
+}
 
 /* PROJECTS SECTION*/
 
@@ -309,6 +339,7 @@ body {
 
 #wrapProjects {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
@@ -384,11 +415,22 @@ body {
 
 @keyframes revealBottom {
     0% {
-        opacity: 0;
+        opacity: 1;
         transform: translateY(100%);
     }
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes revalBottomRotate {
+    0% {
+        opacity: 0;
+        transform: rotate(360deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(360deg);
     }
 }

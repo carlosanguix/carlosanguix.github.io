@@ -37,33 +37,46 @@ function addScrollAnimations() {
     let aboutDiv = document.querySelector('#aboutDiv');
     let photo = aboutDiv.children[2].children[0];
     let photoBound = photo.getBoundingClientRect();
-    let descript = aboutDiv.children[2].children[1];
-    let descriptBound = descript.getBoundingClientRect();
     if ((photoBound.y + photoBound.height + 100) <= window.innerHeight) {
         photo.classList.add('revealLeft');
     }
+    let descript = aboutDiv.children[2].children[1];
+    let descriptBound = descript.getBoundingClientRect();
     if ((descriptBound.y + descriptBound.height + 70) <= window.innerHeight) {
         descript.classList.add('revealRight34');
     }
+    let boxInterest = document.querySelectorAll('.boxInterest');
+    for (let i = 0; i < boxInterest.length; i++) {
+        let boxInterestBound = boxInterest[i].getBoundingClientRect();
+        if ((boxInterestBound.y + boxInterestBound.height + 70) <= window.innerHeight) {
+            boxInterest[i].classList.add('.revealLeft');
+        }
+    }
 }
 
-function fillTheLanguages() {
+function swapLanguages() {
 
-    let languagesDiv = document.querySelector('#languages');
-    for (let i = 0; i < languages.length; i++) {
-        languagesDiv.innerHTML += "<span id=" + languages[i] + ">" + languages[i] + "</span>";
-    }
+    let language = document.querySelector('#language');
+    console.log(language);
+    let num = 0;
+    setInterval( () => {
+        num++;
+        language.innerHTML = '' + languages[num];
+        if (num == languages.length - 1) {
+            num = 0;
+        }
+    }, 1000);
 }
 
 function init() {
 
     linkAnimations();
 
+    swapLanguages();
 
     window.onscroll = () => {
         addScrollAnimations();
     }
-
 
     
 }
