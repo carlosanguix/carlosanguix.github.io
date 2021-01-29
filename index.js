@@ -76,7 +76,6 @@ function addScrollAnimations() {
 function swapLanguages() {
 
     let language = document.querySelector('#language');
-    console.log(language);
     let num = 0;
     setInterval(() => {
         num++;
@@ -105,7 +104,6 @@ function fillProjects() {
             </div>
         `;
 
-        console.log(projects[i].url);
         if (projects[i].url == '') {
             wrapProjects.children[i].children[0].querySelector('.projButtons').innerHTML = `
             <a href="${projects[i].githubUrl}">github</a>`;
@@ -152,7 +150,6 @@ function swapProjectImages() {
         for (let i = 0; i < projectsDom.length; i++) {
             let rnd = Math.floor(Math.random() * projects[i].images.length);
             projectsDom[i].children[1].src = projects[i].images[rnd];
-            console.log(projects[i].images[rnd]);
         }
     }, 4000);
 }
